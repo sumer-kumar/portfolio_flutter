@@ -42,14 +42,33 @@ class _NavigationBarState extends State<NavigationBar> {
           return Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
                 width: double.infinity,
                 child: Row(
                   children: [
-                    Expanded(flex: 3, child: getButton('Home', () {})),
-                    Expanded(flex: 1, child: getButton('About', () {})),
-                    Expanded(flex: 1, child: getButton('Skills', () {})),
-                    Expanded(flex: 1, child: getButton('Contact', () {})),
+                    Expanded(
+                      flex: 5,
+                      child: getButton('Home', () {}),
+                    ),
+                    Expanded(
+                      flex: 4,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: getButton('About', () {}),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: getButton('Skills', () {}),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: getButton('Contact', () {}),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
