@@ -39,17 +39,22 @@ class _NavigationBarState extends State<NavigationBar> {
       //for large screen
       builder: (context, sizingInformation) {
         if (1 == 1) {
-          return Container(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-            width: double.infinity,
-            child: Row(
-              children: [
-                Expanded(flex: 3, child: getButton('Home', () {})),
-                Expanded(flex: 1, child: getButton('About', () {})),
-                Expanded(flex: 1, child: getButton('Skills', () {})),
-                Expanded(flex: 1, child: getButton('Contact', () {})),
-              ],
-            ),
+          return Column(
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                width: double.infinity,
+                child: Row(
+                  children: [
+                    Expanded(flex: 3, child: getButton('Home', () {})),
+                    Expanded(flex: 1, child: getButton('About', () {})),
+                    Expanded(flex: 1, child: getButton('Skills', () {})),
+                    Expanded(flex: 1, child: getButton('Contact', () {})),
+                  ],
+                ),
+              ),
+              Divider(),
+            ],
           );
         }
         //for mobile screem
