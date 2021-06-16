@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/navigation_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,9 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Portfolio',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
       home: MyHomePage(),
     );
@@ -27,30 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          width: double.infinity,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SelectableText(
-                  'Portfolio under construnction............',
-                  style: TextStyle(
-                    fontSize: 40,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                Container(
-                  child: Image(
-                    image: AssetImage('assets/image/construction.png'),
-                    height: MediaQuery.of(context).size.height * 0.4,
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
-      ),
+      body: NavigationBar(),
     );
   }
 }
