@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/about_section.dart';
 import 'package:portfolio/widgets/navigation_bar.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Portfolio',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
     );
@@ -27,8 +28,24 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
     return Scaffold(
-      body: NavigationBar(),
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(12, 0, 50, 1.0),
+          ),
+          width: double.infinity,
+          child: Column(
+            children: [
+              NavigationBar(),
+              Container(
+                child: AboutSection(),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

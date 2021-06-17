@@ -13,17 +13,10 @@ class _NavigationBarState extends State<NavigationBar> {
     return Container(
       alignment: Alignment.topLeft,
       child: TextButton(
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: Colors.grey,
-            borderRadius: BorderRadius.all(Radius.circular(5)),
-          ),
-          child: Text(
-            text,
-            style: TextStyle(
-              color: Colors.black,
-            ),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: Colors.white54,
           ),
         ),
         onPressed: () => onpressed,
@@ -34,50 +27,58 @@ class _NavigationBarState extends State<NavigationBar> {
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
-
+    int flexValueForHome = 5;
     return Container(child: ResponsiveBuilder(
       //for large screen
       builder: (context, sizingInformation) {
-        if (1 == 1) {
-          return Column(
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 5,
-                      child: getButton('Home', () {}),
-                    ),
-                    Expanded(
-                      flex: 4,
-                      child: Row(
-                        children: [
-                          Expanded(
-                            flex: 1,
-                            child: getButton('About', () {}),
+        if (sizingInformation.isMobile) {
+          flexValueForHome = 2;
+        }
+        return Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+              width: double.infinity,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: flexValueForHome,
+                    child: Container(
+                      alignment: sizingInformation.isMobile
+                          ? Alignment.center
+                          : Alignment.topLeft,
+                      child: TextButton(
+                        child: Text(
+                          'Home',
+                          style: TextStyle(
+                            color: Colors.white54,
                           ),
-                          Expanded(
-                            flex: 1,
-                            child: getButton('Skills', () {}),
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: getButton('Contact', () {}),
-                          ),
-                        ],
+                        ),
+                        onPressed: () => () {},
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: getButton('About', () {}),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: getButton('Skills', () {}),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: getButton('Contact', () {}),
+                  ),
+                ],
               ),
-              Divider(),
-            ],
-          );
-        }
-        //for mobile screem
-        return Container();
+            ),
+            Divider(
+              color: Colors.white,
+              thickness: 0.2,
+            ),
+          ],
+        );
       },
     ));
   }
