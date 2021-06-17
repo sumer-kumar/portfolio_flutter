@@ -26,7 +26,7 @@ class _AboutSectionState extends State<AboutSection> {
                     ? Column(
                         children: [
                           Container(
-                            height: mq.size.height * 0.3,
+                            height: mq.size.height * 0.45,
                             width: double.infinity,
                             child: Column(
                               children: [
@@ -48,6 +48,13 @@ class _AboutSectionState extends State<AboutSection> {
                                     ),
                                   ),
                                 ),
+                                SelectableText(
+                                  'I am',
+                                  style: TextStyle(
+                                    fontSize: mq.textScaleFactor * 30,
+                                    color: Colors.pink.shade100,
+                                  ),
+                                ),
                                 Expanded(
                                   flex: 1,
                                   child: DefaultTextStyle(
@@ -60,9 +67,24 @@ class _AboutSectionState extends State<AboutSection> {
                                       repeatForever: true,
                                       animatedTexts: [
                                         TypewriterAnimatedText(
-                                          'Probably thinking about\nsomething that I\nthink you think\nI am THINKING',
-                                          curve: Curves.bounceInOut,
-                                          speed: Duration(milliseconds: 200),
+                                          'Android Developer',
+                                          // curve: Curves.bounceInOut,
+                                          speed: Duration(milliseconds: 100),
+                                        ),
+                                        TypewriterAnimatedText(
+                                          'Web Developer',
+                                          // curve: Curves.bounceInOut,
+                                          speed: Duration(milliseconds: 100),
+                                        ),
+                                        TypewriterAnimatedText(
+                                          'Desktop Application Developer',
+                                          // curve: Curves.bounceInOut,
+                                          speed: Duration(milliseconds: 100),
+                                        ),
+                                        TypewriterAnimatedText(
+                                          'Sketch Artist',
+                                          // curve: Curves.bounceInOut,
+                                          speed: Duration(milliseconds: 100),
                                         ),
                                       ],
                                     ),
@@ -81,7 +103,7 @@ class _AboutSectionState extends State<AboutSection> {
                         children: [
                           Container(
                             height: mq.size.height * 0.8,
-                            width: mq.size.height * 0.4,
+                            width: mq.size.height * 0.6,
                             child: Column(
                               children: [
                                 Expanded(
@@ -102,11 +124,18 @@ class _AboutSectionState extends State<AboutSection> {
                                     ),
                                   ),
                                 ),
+                                SelectableText(
+                                  'I am',
+                                  style: TextStyle(
+                                    fontSize: mq.textScaleFactor * 30,
+                                    color: Colors.pink.shade100,
+                                  ),
+                                ),
                                 Expanded(
                                   flex: 2,
                                   child: DefaultTextStyle(
                                     style: TextStyle(
-                                      fontSize: mq.textScaleFactor * 30,
+                                      fontSize: mq.textScaleFactor * 20,
                                       color: Colors.white54,
                                     ),
                                     textAlign: TextAlign.center,
@@ -114,9 +143,24 @@ class _AboutSectionState extends State<AboutSection> {
                                       repeatForever: true,
                                       animatedTexts: [
                                         TypewriterAnimatedText(
-                                          'Probably thinking about\nsomething that I\nthink you think\nI am THINKING',
-                                          curve: Curves.bounceInOut,
-                                          speed: Duration(milliseconds: 200),
+                                          'Android Developer',
+                                          // curve: Curves.bounceInOut,
+                                          speed: Duration(milliseconds: 100),
+                                        ),
+                                        TypewriterAnimatedText(
+                                          'Web Developer',
+                                          // curve: Curves.bounceInOut,
+                                          speed: Duration(milliseconds: 100),
+                                        ),
+                                        TypewriterAnimatedText(
+                                          'Desktop Application Developer',
+                                          // curve: Curves.bounceInOut,
+                                          speed: Duration(milliseconds: 100),
+                                        ),
+                                        TypewriterAnimatedText(
+                                          'Sketch Artist',
+                                          // curve: Curves.bounceInOut,
+                                          speed: Duration(milliseconds: 100),
                                         ),
                                       ],
                                     ),

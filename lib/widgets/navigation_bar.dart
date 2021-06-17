@@ -73,10 +73,6 @@ class _NavigationBarState extends State<NavigationBar> {
                 ],
               ),
             ),
-            Divider(
-              color: Colors.white,
-              thickness: 0.2,
-            ),
           ],
         );
       },
